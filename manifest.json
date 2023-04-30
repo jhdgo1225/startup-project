@@ -1,0 +1,9 @@
+{
+  "name": "한국어 글쓰기 비서",
+  "description": "여러분의 평생 한국어 글쓰기 실력을 책임지는 비서 프로그램입니다.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "index.html"
+  }
+}
