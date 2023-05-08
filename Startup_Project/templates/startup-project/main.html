@@ -2,9 +2,39 @@
 <html>
   <head>
     <link rel="stylesheet" href="{% static 'startup-project/style.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap"
+      rel="stylesheet" />
   </head>
-
   <body>
-    <h1>I'm done!</h1>
+    <header>
+      <h1>한국어 글쓰기 비서</h1>
+    </header>
+    <main>
+      <section>
+        <article id="writing-contents">
+          <div id="real-writing-zone">
+            <textarea
+              name="notebook"
+              id="notebook"
+              cols="30"
+              rows="10"></textarea>
+          </div>
+          <div id="check-block">
+            <span>글자 수: 0</span>
+            <button id="contents-check">검 사</button>
+          </div>
+        </article>
+        <div id="mato">
+          <button id="mobile-and-tablet-only">결과 확인 ⬆︎</button>
+        </div>
+        <article id="reading-results"></article>
+      </section>
+    </main>
+    <script
+      src="{% static 'startup-project/app.js' %}?ver=1"
+      type="text/javascript"></script>
   </body>
 </html>
