@@ -1,0 +1,60 @@
+header {
+  width: 1200px;
+}
+
+header h1 {
+  font-size: 42px;
+  margin-top: 30px;
+  margin-left: 20px;
+}
+
+main {
+  width: 1200px;
+  height: 80%;
+  margin: 20px 30px 30px 30px;
+}
+
+section {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+article {
+  height: 100%;
+  border: 1px black solid;
+  border-radius: 10px;
+}
+
+#writing-contents {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  padding: 20px 30px;
+}
+
+#reading-results {
+  width: 40%;
+}
+
+#real-writing-zone {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#real-writing-zone > textarea {
+  width: 680px;
+  height: 625px;
+  font-size: 18px;
+}
+
+#check-block {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+#contents-check {
+  font-size: 20px;
+}

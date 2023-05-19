@@ -1,7 +1,29 @@
 {% load static %}
 <html>
   <head>
-    <link rel="stylesheet" href="{% static 'startup-project/style.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'startup-project/style.css' %}?ver=1" />
+    <link
+      rel="stylesheet"
+      media="(max-width: 600px)"
+      href="{% static 'startup-project/media/mobile_vertical_screen.css' %}" />
+    <link
+      rel="stylesheet"
+      media="(min-width: 601px)"
+      href="{% static 'startup-project/media/mobile_horizontal_screen.css' %}" />
+    <link
+      rel="stylesheet"
+      media="(min-width: 768px)"
+      href="{% static 'startup-project/media/tablet_vertical_screen.css' %}" />
+    <link
+      rel="stylesheet"
+      media="(min-width: 1025px)"
+      href="{% static 'startup-project/media/tablet_horizontal_screen.css' %}" />
+    <link
+      rel="stylesheet"
+      media="(min-width: 1300px)"
+      href="{% static 'startup-project/media/desktop.css' %}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,14 +49,12 @@
             <button id="contents-check">검 사</button>
           </div>
         </article>
-        <div id="mato">
-          <button id="mobile-and-tablet-only">결과 확인 ⬆︎</button>
-        </div>
+        <div id="mato"></div>
         <article id="reading-results"></article>
       </section>
     </main>
     <script
-      src="{% static 'startup-project/app.js' %}?ver=1"
+      src="{% static 'startup-project/app.js' %}"
       type="text/javascript"></script>
   </body>
 </html>
