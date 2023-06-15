@@ -1,0 +1,40 @@
+{% load static %}
+<html>
+  <head>
+    <link rel="stylesheet" href="{% static 'style.css' %}?ver=1" />
+    <link
+      rel="stylesheet"
+      media="(max-width: 600px)"
+      href="{% static 'media/mobile_vertical_screen.css' %}" />
+    <link
+      rel="stylesheet"
+      media="(min-width: 601px)"
+      href="{% static 'media/mobile_horizontal_screen.css' %}" />
+    <link
+      rel="stylesheet"
+      media="(min-width: 768px)"
+      href="{% static 'media/tablet_vertical_screen.css' %}" />
+    <link
+      rel="stylesheet"
+      media="(min-width: 1025px)"
+      href="{% static 'media/tablet_horizontal_screen.css' %}" />
+    <link
+      rel="stylesheet"
+      media="(min-width: 1300px)"
+      href="{% static 'media/desktop.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap"
+      rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <h1>한국어 글쓰기 비서</h1>
+    </header>
+    <main>
+      <section>{% block content %} {% endblock %}</section>
+    </main>
+    {% block js %} {% endblock %}
+  </body>
+</html>

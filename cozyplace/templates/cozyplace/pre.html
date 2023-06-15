@@ -1,0 +1,43 @@
+{% extends 'main.html' %} {% load static %} {% block content %}
+<article id="writing-contents">
+  <form id="check-form" method="POST" action="/">
+    {% csrf_token %}
+    <div id="real-writing-zone">
+      <textarea
+        name="notebook"
+        id="notebook"
+        cols="30"
+        rows="10"
+        style="white-space: pre-wrap"></textarea>
+    </div>
+    <div id="check-block">
+      <span>글자 수: 0</span>
+      <input type="submit" id="contents-check" value="검 사" />
+    </div>
+  </form>
+</article>
+<article id="reading-results"></article>
+
+{% endblock %} {% block js %}
+<script>
+  const checkForm = document.querySelector("#check-form");
+  const textarea = document.querySelector("#notebook");
+  const letterCnt = document.querySelector("#check-block > span");
+
+  const handleKeyUp = () => {
+    const inputText = textarea.value;
+    letterCnt.innerText = `글자 수: ${inputText.length}`;
+  };
+
+  const handleCheckForm = (event) => {
+    if (textarea.value.trim().length < 30) {
+      console.log("30자 이상 입력해주세요!");
+      event.preventDefault();
+    }
+  };
+
+  textarea.addEventListener("keyup", handleKeyUp);
+  textarea.focus();
+  checkForm.addEventListener("submit", handleCheckForm);
+</script>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'main.html' %} {% load static %} {% block content %}
+<article id="writing-contents">
+  <form id="check-form" method="GET" action="/">
+    <div id="real-writing-zone" style="white-space: pre-wrap"></div>
+    <div id="check-block">
+      <span>글자 수: </span>
+      <input type="submit" id="contents-check" value="다시쓰기" />
+    </div>
+  </form>
+  <div id="writing-zone-for-result"></div>
+</article>
+<div id="mato"></div>
+<article id="reading-results">
+  {% for on in old_and_new %}
+  <div style="white-space: pre-wrap">
+    <span>{{on.old}}</span>
+    <span>{{on.new}}</span>
+  </div>
+  {% endfor %}
+</article>
+{% endblock %} {% block js %}
+<script>
+  const resultZone = document.querySelector("#real-writing-zone");
+  const resultContainer = document.querySelector("#mato");
+  const spanContent = "{{span_content}}";
+  let resultBtn;
+
+  resultZone.insertAdjacentHTML("afterbegin", spanContent);
+  resultBtn = document.createElement("button");
+  resultBtn.innerText = "결과 확인 ⬆︎";
+  resultBtn.classList.add("mobile-and-tablet-only");
+
+  if (window.innerWidth <= 1024) {
+    resultContainer.append(resultBtn);
+  }
+
+  const handleResize = () => {
+    if (window.innerWidth > 1024) {
+      resultContainer.removeChild(resultBtn);
+    } else {
+      resultContainer.append(resultBtn);
+    }
+  };
+
+  window.addEventListener("resize", handleResize);
+</script>
+{% endblock %}
